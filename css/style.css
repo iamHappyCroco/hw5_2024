@@ -1,164 +1,170 @@
+/* Logo animation for the main page */
 #logo {
-     animation: mymove 5s infinite;
+     animation: mymove 5s infinite; /* Apply continuous animation to increase width and opacity */
 }
 
-
+/* Keyframes for logo animation */
 @keyframes mymove {
      from {
-          width: 25px;
-          opacity: 0;
+          width: 25px;      /* Start small */
+          opacity: 0;       /* Start fully transparent */
      }
-
      to {
-          width: 475px;
-          opacity: 1;
+          width: 475px;     /* Grow to larger width */
+          opacity: 1;       /* End fully opaque */
      }
 }
 
+/* Basic styling for body */
 body {
-     font-family: "Poppins", serif;
-     background-image: url("../images/concrete_seamless.png");
-     background-color: #f1f1f1;
+     font-family: "Poppins", serif; /* Use Poppins font with serif fallback */
+     background-image: url("../images/concrete_seamless.png"); /* Set seamless background image */
+     background-color: #f1f1f1; /* Fallback background color */
 }
 
+/* Center header content */
 header {
      display: flex;
-     flex-direction: column;
-     align-items: center;
+     flex-direction: column; /* Stack header elements vertically by default */
+     align-items: center;    /* Center items horizontally */
 }
 
+/* Navigation links layout */
 .nav_links {
      display: flex;
-     flex-direction: column;
+     flex-direction: column; /* Stack links vertically on default view */
 }
 
+/* Styling for navigation links */
 .nav_item a {
-     color: #0000ee;
+     color: #0000ee; /* Link color set to standard blue */
 }
 
 .nav_item a:visited {
-     color: #0000ee;
+     color: #0000ee; /* Maintain color consistency for visited links */
      /* After visited, the links keep the same color */
 }
 
-.card>header {
-     background-color: #288088;
-     border: 2px solid #45ADAD;
-     padding: 20px 0;
-     border-top-left-radius: 50px;
-     border-top-right-radius: 50px;
+/* Card header styling */
+.card > header {
+     background-color: #288088;  /* Set card header background color */
+     border: 2px solid #45ADAD;  /* Define a border for card header */
+     padding: 20px 0;            /* Add vertical padding */
+     border-top-left-radius: 50px; /* Rounded top-left corner */
+     border-top-right-radius: 50px; /* Rounded top-right corner */
 }
 
+/* Card styling */
 .card {
      border-top-left-radius: 50px;
      border-top-right-radius: 50px;
-     /* Also fix the border-radius on the top left and top right of the card */
-     /* So that the corner can display the background image */
-}
+     /* Ensure rounded corners match header corners */
 
-.card {
      display: flex;
-     flex-direction: column;
-     flex-basis: 450px;
-     width: 450px;
+     flex-direction: column; /* Stack card content vertically */
+     flex-basis: 450px; /* Initial size for card in flex layout */
+     width: 450px; /* Set width for card */
 }
 
+/* Pricing section styling */
 .pricing {
      display: flex;
-     flex-direction: column;
-     align-items: center;
+     flex-direction: column; /* Stack pricing items vertically */
+     align-items: center;    /* Center items within pricing section */
 }
 
+/* Gallery image styling */
 .gallery img {
-     border: 10px solid #50C7C7;
-     margin: 10px;
-     width: 300px;
+     border: 10px solid #50C7C7; /* Add border around images */
+     margin: 10px; /* Space between images */
+     width: 300px; /* Set width for each image */
 }
 
+/* Gallery layout */
 .gallery {
      display: flex;
-     flex-wrap: wrap;
-     justify-content: center;
+     flex-wrap: wrap; /* Wrap images to the next row if necessary */
+     justify-content: center; /* Center images within gallery */
 }
 
+/* Larger screen styles (900px and above) */
 @media screen and (min-width: 900px) {
      header {
           display: flex;
-          flex-direction: row;
-          justify-content: space-between;
+          flex-direction: row; /* Align header elements horizontally */
+          justify-content: space-between; /* Space header items evenly */
      }
 
      .nav_links {
           display: flex;
-          flex-direction: row;
+          flex-direction: row; /* Display links in a row */
      }
 
      .pricing {
           display: flex;
-          flex-direction: row;
-          justify-content: center;
-          align-items: center;
+          flex-direction: row; /* Align pricing items in a row */
+          justify-content: center; /* Center items horizontally */
+          align-items: center; /* Align items vertically */
      }
 
      .card {
           display: flex;
-          flex-direction: column;
-          flex-basis: 275px;
-          justify-content: center;
+          flex-direction: column; /* Stack card content */
+          flex-basis: 275px; /* Set smaller base size for each card */
+          justify-content: center; /* Center content within each card */
      }
 
      header:first-child {
-          position: sticky;
-          top: 0;
-          visibility: visible;
+          position: sticky; /* Make header sticky at top of page */
+          top: 0;           /* Stick header to top of viewport */
+          visibility: visible; /* Ensure header is visible */
      }
-
 }
 
+/* Respect user's motion preference */
 @media (prefers-reduced-motion: reduce) {
      #logo {
-          animation: none;
+          animation: none; /* Disable animation if reduced motion is preferred */
      }
 }
 
+/* Print-specific styling */
 @media print {
-
      body {
-          font-family: Arial, Helvetica;
-          background-image: none;
+          font-family: Arial, Helvetica; /* Change font for printing */
+          background-image: none;       /* Remove background image for printing */
      }
 
      header {
           display: flex;
-          flex-direction: column;
+          flex-direction: column; /* Stack header elements vertically for print */
           align-items: center;
      }
 
      .nav_links {
           display: flex;
-          flex-direction: row;
-          justify-content: space-around;
+          flex-direction: row; /* Arrange navigation links horizontally */
+          justify-content: space-around; /* Space links evenly in print view */
      }
 
      .pricing {
           display: flex;
-          flex-direction: row;
-          flex-wrap: nowrap;
-          align-items: end;
+          flex-direction: row; /* Arrange pricing section in a row */
+          flex-wrap: nowrap;   /* Ensure no wrapping in print view */
+          align-items: end;    /* Align items to the bottom */
      }
 
      .card {
-          border: solid 2px #45ADDD;
-          flex-basis: 325px;
+          border: solid 2px #45ADDD; /* Different border color for printing */
+          flex-basis: 325px; /* Set base size for each card in print */
      }
 
      .gallery,
      #gallery {
-          display: none;
+          display: none; /* Hide gallery images in print */
      }
 
      .card li:nth-child(2)::after {
-          content: "👍";
+          content: "👍"; /* Append thumbs up emoji to the second item in card list */
      }
-
 }
